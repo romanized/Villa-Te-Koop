@@ -1,3 +1,9 @@
 :root {
-  --color1: #4797cc;
+  --color1: #0099cc;
+  --color2: #66ccff;
+  --background-white: #ffffff;
+  --text-color-black: #333333;
 }
+
+/*   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+ */

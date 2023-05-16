@@ -1,3 +1,14 @@
+body {
+  background-color: var(--background-white);
+}
+
+.main-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 33vw);
+  grid-template-rows: repeat(2, 50vh);
+  place-items: center;
+}
+
 .card {
   position: relative;
   width: 20.875em;
@@ -10,7 +21,8 @@
   justify-content: center;
   background: #fff;
   padding: 0.5em;
-  padding-bottom: 3.4em;
+  padding-bottom: 4em;
+  margin-top: 5vh;
 }
 
 .card::after {
@@ -37,16 +49,16 @@
   left: 0.625em;
   bottom: 1.875em;
   font-weight: 400;
-  color: #000;
+  color: var(--text-color-black);
 }
 
 .card .price {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 0.9em;
+  font-size: 1.2em;
   position: absolute;
   left: 0.625em;
   bottom: 0.625em;
-  color: #000;
+  color: var(--text-color-black);
 }
 
 .card:hover::after {
