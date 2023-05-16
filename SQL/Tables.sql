@@ -1,0 +1,1 @@
+CREATE TABLE `verprog1_agenda`.`contact gegevens` (`Naam` TEXT NOT NULL , `Adres` TEXT NOT NULL , `Telefoonnummer` INT NOT NULL , `Email` TEXT NOT NULL , `Vraag` TEXT NOT NULL ) ENGINE = InnoDB;
