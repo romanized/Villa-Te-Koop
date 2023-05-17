@@ -1,0 +1,201 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--background-white);
+}
+
+/* Slide Show Start */
+
+.slider-frame {
+  overflow: hidden;
+  height: 800px;
+  width: 1200px;
+  margin: 20px auto;
+}
+
+@-webkit-keyframes slide_animation {
+  0% {
+    left: 0px;
+  }
+  10% {
+    left: 0px;
+  }
+  20% {
+    left: 1200px;
+  }
+  30% {
+    left: 1200px;
+  }
+  40% {
+    left: 2400px;
+  }
+  50% {
+    left: 2400px;
+  }
+  60% {
+    left: 1200px;
+  }
+  70% {
+    left: 1200px;
+  }
+  80% {
+    left: 0px;
+  }
+  90% {
+    left: 0px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes slide_animation {
+  0% {
+    left: 0px;
+  }
+  10% {
+    left: 0px;
+  }
+  20% {
+    left: 1200px;
+  }
+  30% {
+    left: 1200px;
+  }
+  40% {
+    left: 2400px;
+  }
+  50% {
+    left: 2400px;
+  }
+  60% {
+    left: 1200px;
+  }
+  70% {
+    left: 1200px;
+  }
+  80% {
+    left: 0px;
+  }
+  90% {
+    left: 0px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+.slide-images {
+  width: 3600px;
+  height: 800px;
+  margin: 0 0 0 -2400px;
+  position: relative;
+  -webkit-animation-name: slide_animation;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-play-state: running;
+  animation-name: slide_animation;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+
+.img-container {
+  height: 800px;
+  width: 1200px;
+  position: relative;
+  float: left;
+}
+
+/* Slide Show End */
+
+/* Main Content Start */
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  margin-left: 40px;
+}
+
+.Title {
+  margin-left: 40px;
+  margin-bottom: 40px;
+}
+
+.indeling {
+  max-width: 700px;
+}
+
+.locatie {
+  margin-top: 40px;
+}
+
+.table-bieden {
+  margin-top: 20px;
+}
+
+span {
+  font-weight: 200;
+  font-size: 40px;
+}
+
+.bieden {
+  margin-top: 40px;
+}
+
+.bieden > h2 {
+  margin-bottom: 20px;
+}
+
+.para-indeling {
+  margin-top: 20px;
+}
+
+@media (max-width: 1100px) {
+  .main-content {
+    grid-template-columns: none;
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+/* Main Content End */
+
+/* Form Bieden Start */
+
+.form-container {
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: var(--color1);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.form-button:hover {
+  background-color: var(--color2);
+  transition: all 0.6s ease;
+}
