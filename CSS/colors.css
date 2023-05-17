@@ -7,3 +7,11 @@
 
 /*   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
  */
+
+:root {
+  --contactwhite: #fff;
+  --contactgrey: #ccc;
+  --contactdark_grey: #555;
+  --contactblue: #4f6fad;
+  --contactpink: #ee9cb4;
+}
