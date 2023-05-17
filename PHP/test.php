@@ -1,5 +1,5 @@
 <?php
-require_once('./require.php');
+require('./require.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,28 +11,52 @@ require_once('./require.php');
     <title>Document</title>
 </head>
 
+
 <body>
+
     <h1>Contact gegevens</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Naam</th>
-                <th>Adres</th>
-                <th>Telefoonnummer</th>
-                <th>Email</th>
-                <th>Vraag</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><?= $naam ?></td>
-                <td><?= $adres ?></td>
-                <td><?= $telefoonnummer ?></td>
-                <td><?= $email ?></td>
-                <td><?= $vraag ?></td>
-            </tr>
-        </tbody>
-    </table>
+    <?php
+    echo "<table>"; // Start the table
+    ?>
+    <thead>
+        <tr>
+            <th>Naam</th>
+            <th>Adres</th>
+            <th>Telefoonnummer</th>
+            <th>Email</th>
+            <th>Vraag</th>
+        </tr>
+    </thead>
+    <?php
+    if (!$db_connection->connect_error) {
+        $SQL = "SELECT * FROM contact_gegevens";
+
+        $result = $db_connection->query($SQL);
+
+        while ($row = $result->fetch_assoc()) {
+            $naam = $row['Naam'];
+            $adres = $row['Adres'];
+            $telefoonnummer = $row['Telefoonnummer'];
+            $email = $row['Email'];
+            $vraag = $row['Vraag'];
+
+            echo "<tr>"; // Start a new table row
+            echo "<td>$naam</td>";
+            echo "<td>$adres</td>";
+            echo "<td>$telefoonnummer</td>";
+            echo "<td>$email</td>";
+            echo "<td>$vraag</td>";
+            echo "</tr>"; // End the table row
+        }
+    } else {
+        echo "Database not found" . $db_connection->connect_error;
+    }
+
+    echo "</table>"; // End the table
+    
+    $db_connection->close();
+    ?>
+
 </body>
 
 </html>
