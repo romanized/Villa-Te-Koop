@@ -1,0 +1,254 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body {
+  background-color: #f0f0f0;
+  font-size: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+div,
+textarea,
+input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  min-width: 324px;
+  background-color: #fff;
+  border: 1px solid #f0f0f0;
+  border-bottom: 3px solid #ccc;
+}
+
+.row {
+  width: 100%;
+  margin: 0 0 1em 0;
+  padding: 0 2.5em;
+}
+
+.row.header {
+  padding: 1.5em 2.5em;
+  border-bottom: 1px solid #ccc;
+  background: url(https://images2.imgbox.com/a5/2e/m3lRbCCA_o.jpg) left -80px;
+  color: #fff;
+}
+
+.row.body {
+  padding: 0.5em 2.5em 1em;
+}
+
+.pull-right {
+  float: right;
+}
+
+.form-container {
+  max-width: 524px;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  display: inline-block;
+  font-weight: 100;
+  font-size: 2.8125em;
+  border-bottom: 1px solid hsla(100%, 100%, 100%, 0.3);
+  margin: 0 0 0.1em 0;
+  padding: 0 0 0.4em 0;
+}
+
+h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.25em;
+  margin: 1em 0 0.4em 0;
+}
+
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: var(--color1);
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+button:hover span {
+  transform: translateX(5em);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+.btn:hover {
+  background-color: #a3a3a3;
+}
+
+.btn.btn-submit {
+  background-color: #4f6fad;
+  border-bottom-color: #2b477a;
+}
+
+.btn.btn-submit:hover {
+  background-color: #5978b9;
+}
+
+form {
+  max-width: 100%;
+  display: block;
+}
+
+form ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+form ul li {
+  margin: 0 0 0.25em 0;
+  clear: both;
+  display: inline-block;
+  width: 100%;
+}
+
+form ul li:last-child {
+  margin: 0;
+}
+
+form ul li p {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+form ul li p.right {
+  float: right;
+}
+
+form ul li .divider {
+  margin: 0.5em 0 0.5em 0;
+  border: 0;
+  height: 1px;
+  width: 100%;
+  display: block;
+  background-color: #4f6fad;
+  background-image: linear-gradient(to right, #ee9cb4, #4f6fad);
+}
+
+form ul li .req {
+  color: #ee9cb4;
+}
+
+form label {
+  display: block;
+  margin: 0 0 0.5em 0;
+  color: #4f6fad;
+  font-size: 1em;
+}
+
+form input {
+  margin: 0 0 0.5em 0;
+  border: 1px solid #ccc;
+  padding: 6px 4px;
+  color: #555;
+  font-size: 1em;
+}
+
+form textarea {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  width: 100%;
+  color: #555;
+  resize: none;
+}
+
+form small {
+  color: #4f6fad;
+  margin: 0 0 0 0.5em;
+}
+
+@media only screen and (max-width: 480px) {
+  .pull-right {
+    float: none;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  label {
+    width: 100%;
+    display: inline-block;
+    clear: both;
+  }
+
+  li,
+  p {
+    width: 100%;
+  }
+
+  input.btn {
+    margin: 1.5em 0 0.5em;
+  }
+
+  h1 {
+    font-size: 2.25em;
+  }
+
+  h3 {
+    font-size: 1.125em;
+  }
+
+  li small {
+    display: none;
+  }
+}
+
+/* 
+footer {
+    margin-top: 50px;
+} */
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);

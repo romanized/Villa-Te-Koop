@@ -3,7 +3,16 @@
   --color2: #66ccff;
   --background-white: #ffffff;
   --text-color-black: #333333;
+  --text-color-white: #ffffff;
 }
 
 /*   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
  */
+
+:root {
+  --contactwhite: #fff;
+  --contactgrey: #ccc;
+  --contactdark_grey: #555;
+  --contactblue: #4f6fad;
+  --contactpink: #ee9cb4;
+}
