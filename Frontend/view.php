@@ -1,3 +1,19 @@
+<?php
+require("../PHP/require.php");
+
+$SQL = "SELECT * FROM villa_view";
+
+$result = $db_connection->query($SQL);
+
+while ($details = $result->fetch_assoc()) {
+    $name = $details['Name'];
+    $Image_1 = $details['Image_1'];
+    $Image_2 = $details['Image_2'];
+    $Image_3 = $details['Image_3'];
+    $Indeling = $details['Indeling'];
+    $Locatie = $details['Locatie'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +22,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Villa View</title>
-    <link rel="shortcut icon" href="../MEDIA/logo.jpg" type="image/x-icon">
     <link rel="shortcut icon" href="../MEDIA/logo.jpg" type="image/x-icon" />
     <link rel="stylesheet" href="../CSS/headerfooter.css">
     <link rel="stylesheet" href="../CSS/colors.css" />
@@ -18,11 +33,11 @@
         <nav class="navbar">
             <div class="nav-logo">
                 <img src="../MEDIA/logo.jpg" alt="Logo" class="logo">
-                <span>Villas4U</span> 
+                <span>Villas4U</span>
             </div>
             <div class="nav-links">
-                <a href="./index.html">Home</a>
-                <a href="./contact.html">Contact</a>
+                <a href="./index.php">Home</a>
+                <a href="./contact.php">Contact</a>
                 <!-- <a href="#">Admin</a> -->
             </div>
         </nav>
@@ -30,40 +45,36 @@
     <main>
         <div class="slideshow-container">
             <div class="mySlides fade">
-               <div class="numbertext">1 / 3</div>
-               <img src="../MEDIA/slideshow1.jpg" />
+                <div class="numbertext">1 / 3</div>
+                <img src="<?= $Image_1 ?>" />
             </div>
             <div class="mySlides fade">
-               <div class="numbertext">2 / 3</div>
-               <img src="../MEDIA/slideshow2.jpg" />
+                <div class="numbertext">2 / 3</div>
+                <img src="<?= $Image_2 ?>" />
             </div>
             <div class="mySlides fade">
-               <div class="numbertext">3 / 3</div>
-               <img src="../MEDIA/slideshow3.jpg" />
+                <div class="numbertext">3 / 3</div>
+                <img src="<?= $Image_3 ?>" />
             </div>
-         </div>
-         <br />
-         <div style="text-align: center">
+        </div>
+        <br />
+        <div style="text-align: center">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
-         </div>
+        </div>
         <div class="Title">
-            <span>(Title huis)</span>
+            <span><?= $name ?></span>
         </div>
         <section class="main-content">
             <div class="content-left">
                 <div class="indeling">
                     <span>Indeling</span>
-                    <p class="para-indeling">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis ipsum labore tempora
-                        aperiam nam, cupiditate doloribus praesentium saepe, cum reprehenderit aliquid similique quia
-                        veritatis ipsa soluta quam beatae odio fugit.</p>
+                    <p class="para-indeling"><?= $Indeling ?></p>
                 </div>
                 <div class="locatie">
                     <h1>Locatie</h1>
-                    <iframe width="800" height="450" style="border:0" loading="lazy" allowfullscreen
-                        referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place
-    &q=Space+Needle,Seattle+WA">
+                    <iframe width="800" height="450" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="<?= $Locatie ?>">
                     </iframe>
                 </div>
             </div>
@@ -199,4 +210,5 @@
     </footer>
 </body>
 <script src="../JS/SlideShow.js"></script>
+
 </html>

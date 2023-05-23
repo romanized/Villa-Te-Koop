@@ -23,4 +23,4 @@ VALUES(
     'Kan ik ook in persoon een villa kopen ipv bieden'
 );
 
-$SQL = SELECT * FROM `contact_gegevens`
+$SQL = "SELECT * FROM contact_gegevens"
