@@ -22,6 +22,8 @@ input {
   background-color: #fff;
   border: 1px solid #f0f0f0;
   border-bottom: 3px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .row {
@@ -47,6 +49,9 @@ input {
 
 .form-container {
   max-width: 524px;
+  border: solid 1px var(--color1);
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -184,7 +189,7 @@ form ul li .req {
 form label {
   display: block;
   margin: 0 0 0.5em 0;
-  color: #4f6fad;
+  color: var(--color1);
   font-size: 1em;
 }
 
@@ -252,3 +257,11 @@ footer {
 } */
 
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+
+iframe {
+  border-radius: 5%;
+  justify-content: center;
+  margin-left: 87px;
+  margin-top: 10px;
+}
