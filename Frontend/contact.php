@@ -30,15 +30,10 @@
     </header>
 
     <main>
-        <div class="container">
-          <div>
-              <div class="text-container">
-                <p>Welkom op onze contactpagina! Wij zijn verheugd dat u interesse toont in de prachtige villa's die wij te koop aanbieden. Om u zo goed mogelijk van dienst te kunnen zijn, hebben wij deze pagina gecreëerd om al uw vragen en opmerkingen te beantwoorden.</p>
-                <br>
-                <p>Om contact met ons op te nemen, vult u alstublieft het bijgevoegde contactformulier in met uw naam, e-mailadres, telefoonnummer en uw specifieke vraag of opmerking. Zorg ervoor dat u alle relevante informatie verstrekt, zodat we u zo efficiënt mogelijk kunnen helpen. Wij streven ernaar om binnen 48 uur te reageren op uw verzoek.</p>
-            </div>
-          </div>
-            <div class="form-container">
+        <iv class="container">
+        <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2460.353165409691!2d4.475485377227434!3d51.92751147191191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c434a824865b55%3A0xed9327576594ffe!2sHeer%20Bokelweg%20255%2C%203032%20AD%20Rotterdam!5e0!3m2!1snl!2snl!4v1684832628552!5m2!1snl!2snl" width="900" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit dolorum consequuntur illo officia voluptas, laboriosam vitae quaerat, incidunt doloribus nostrum eius, asperiores amet. Neque, beatae. Laudantium, beatae! Pariatur, laborum praesentium.</p></div>
+        <div><div class="form-container">
               <div class="row header">
             <h1>CONTACT ONS &nbsp;</h1>
             <h3>Vul de onderstaande informatie zo duidelijk mogelijk op</h3>
@@ -89,9 +84,11 @@
               </ul>
             </form>  
           </div>
+          </div>
             </div>
           
-        </div></main>
+        </div>
+      </main>
 
         <footer class="bg-[#252525] flex justify-center flex-row mt-4 text-white px-6 pb-[8rem] pt-[4rem]">
             <div class="grid grid-cols-4 gap-12 max-[900px]:grid-cols-none max-[900px]:grid-rows-4 max-[820px]:pb-none">
