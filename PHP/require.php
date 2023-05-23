@@ -1,9 +1,9 @@
 <?php
 
-$db_host = 'localhost:3306';
-$db_user = 'Maddox';
-$db_pass = '%87Y0bei1';
-$db_data = 'Villas4Umn';
+$db_host = 'localhost';
+$db_user = 'root';
+$db_pass = '';
+$db_data = 'villas4u';
 
 $db_connection = new mysqli($db_host, $db_user, $db_pass, $db_data);
 

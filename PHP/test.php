@@ -1,5 +1,5 @@
 <?php
-require_once('./require.php');
+require('./require.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
