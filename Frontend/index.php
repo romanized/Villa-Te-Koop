@@ -24,8 +24,8 @@ require("../PHP/require.php")
         Villas4U
       </div>
       <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Contact</a>
+        <a href="./index.php">Home</a>
+        <a href="./contact.php">Contact</a>
       </div>
     </nav>
   </header>
@@ -38,15 +38,16 @@ require("../PHP/require.php")
         $result = $db_connection->query($SQL);
 
         while ($detailsvilla = $result->fetch_assoc()) {
+          $ID = $detailsvilla['ID'];
           $Title = $detailsvilla['Name'];
           $Image = $detailsvilla['IMG'];
           $Bid = $detailsvilla['BID'];
 
-          echo "<div class='card'>
+          echo "<a href='./view.php?$ID'><div class='card'>
           <div class='image'><img width='317px' height='255px' src=$Image></img></div>
           <span class='title'>$Title</span>
           <span class='price'>$$Bid k.k.</span>
-        </div>";
+        </div></a>";
         }
       } else {
         echo "Database not found" . $db_connection->connect_error;

@@ -1,15 +1,19 @@
 <?php
 require("../PHP/require.php");
 
-$SQL = "SELECT * FROM villa_view";
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+$id = substr($url, strrpos($url, '?') + 1);
+
+$SQL = "SELECT * FROM villas_indexpage WHERE ID = $id";
 
 $result = $db_connection->query($SQL);
 
 while ($details = $result->fetch_assoc()) {
     $name = $details['Name'];
-    $Image_1 = $details['Image_1'];
-    $Image_2 = $details['Image_2'];
-    $Image_3 = $details['Image_3'];
+    $Image_1 = $details['SLIDEIMG1'];
+    $Image_2 = $details['SLIDEIMG2'];
+    $Image_3 = $details['SLIDEIMG3'];
     $Indeling = $details['Indeling'];
     $Locatie = $details['Locatie'];
 }
