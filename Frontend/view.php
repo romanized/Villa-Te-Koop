@@ -132,7 +132,7 @@ while ($details = $result->fetch_assoc()) {
                             </div>
                             <div class="form-group">
                                 <label class="form-label" for="bod">Bod:</label>
-                                <input class="form-input" type="text" id="bod" name="bod" required>
+                                <input class="form-input" type="number" id="bod" name="bod" required>
                             </div>
                             <input class="form-button" type="submit" value="Plaats Bod">
                         </form>
