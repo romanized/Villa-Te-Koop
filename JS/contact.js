@@ -1,10 +1,8 @@
-  const images = document.querySelectorAll(".slideshow-container img");
-  let activeIndex = 0;
+  const days = ['Zondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag', 'Zaterdag'];
 
-  function changeImage() {
-    images[activeIndex].classList.remove("active");
-    activeIndex = (activeIndex + 1) % images.length;
-    images[activeIndex].classList.add("active");
-  }
+const today = new Date().getDay();
+const scheduleItems = document.getElementsByClassName('schedule-item');
 
-  setInterval(changeImage, 3000); // Change the image every 3 seconds
+if (today > 0 && today < 6) { // Check if today is Monday to Friday
+  scheduleItems[today - 1].style.color = 'red'; // Highlight today's opening hours
+}
