@@ -1,71 +1,58 @@
 <?php
-require("./require.php");
-$voorNaamError = "";
-$achterNaamError = "";
-$telefoonNummerError = "";
-$emailError = "";
-$bodError = "";
+$Error = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['submit'])) {
         if (empty($_POST['voornaam'])) {
-            $voorNaamErrorror = "U moet uw Voornaam nog invullen";
+            $Error .= "U moet uw Voornaam nog invullen<br>";
         } else {
             $voorNaam = $_POST['voornaam'];
         }
 
         if (empty($_POST['voornaam'])) {
-            $achterNaamError = "U moet uw Achternaam nog invullen";
+            $Error .= "U moet uw Achternaam nog invullen<br>";
         } else {
             $achterNaam = $_POST['achternaam'];
         }
 
         if (empty($_POST['voornaam'])) {
-            $telefoonNummerError = "U moet uw Achternaam nog invullen";
+            $Error .= "U moet uw Achternaam nog invullen<br>";
         } else {
-            $telefonNummer = $_POST['telefoonnummer'];
+            $telefoonNummer = $_POST['telefoonnummer'];
         }
 
         if (empty($_POST['email'])) {
-            $emailError = "U moet uw Email nog invullen";
+            $Error .= "U moet uw Email nog invullen<br>";
         } else {
             $email = $_POST['email'];
         }
 
         if (empty($_POST['bod'])) {
-            $bodError = "U moet uw Bod nog invullen";
+            $Error .= "U moet uw Bod nog invullen<br>";
         } else if (!empty($_POST['bod'])) {
             $bod = $_POST['bod'];
-        } 
-        
-        if ($achterNaamError == "") {
-            if ($bodError == "") {
-                if ($emailError == "") {
-                    if ($telefoonNummerError == "") {
-                        if ($voorNaamError == "") {
-                            if ($bod <! 1000000) {
-                                include_once("../Frontend/view.php");
-                                "INSERT INTO bieden 
-                                (voornaam, 
-                                achternaam, 
-                                telefoonnummer, 
-                                email,
-                                bod) 
-                                VALUES 
-                                ($voorNaam, 
-                                $achterNaam, 
-                                $telefonNummer, 
-                                $email, 
-                                $bod)";
-                            }
-                        } else {
-                            include_once("../Frontend/view.php");
-                        }
-                    }
-                }
-            } 
         }
-    } else {
-        header(header: '../Frontend/view.php');
+
+        if ($Error == "") {
+            $villas = $_POST["villaname"];
+            $insertsql = "INSERT INTO `bieden`
+            (`villa`, 
+            `vooraam`,
+            `achternaam`, 
+            `telefoonnummer`,
+            `email`, 
+            `bod`) 
+            VALUES
+            ('$villas',
+            '$voorNaam',
+            '$achterNaam',
+            '$telefoonNummer',
+            '$email',
+            '$bod')";
+            if ($db_connection->query($insertsql) == TRUE) {
+            } else {
+                echo "Error :" . $insertsql . "<br>" . $db_connection->error;
+            }
+        }
     }
 }
