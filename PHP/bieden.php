@@ -9,13 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $voorNaam = $_POST['voornaam'];
         }
 
-        if (empty($_POST['voornaam'])) {
+        if (empty($_POST['achternaam'])) {
             $Error .= "U moet uw Achternaam nog invullen<br>";
         } else {
             $achterNaam = $_POST['achternaam'];
         }
 
-        if (empty($_POST['voornaam'])) {
+        if (empty($_POST['telefoonnummer'])) {
             $Error .= "U moet uw Achternaam nog invullen<br>";
         } else {
             $telefoonNummer = $_POST['telefoonnummer'];
@@ -29,27 +29,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if (empty($_POST['bod'])) {
             $Error .= "U moet uw Bod nog invullen<br>";
-        } else if (!empty($_POST['bod'])) {
+        } else {
             $bod = $_POST['bod'];
+            if (!is_numeric($bod)) {
+                $Error .= "Bod moet een numerieke waarde zijn<br>";
+            } else  if ($bod < 1000000) {
+                $Error .= "Bod moet groter zijn dan 1000000<br>";
+            }
         }
 
         if ($Error == "") {
-            $villas = $_POST["villaname"];
+            $villaname = $_POST["villaname"];
             $insertsql = "INSERT INTO `bieden`
-            (`villa`, 
-            `vooraam`,
-            `achternaam`, 
-            `telefoonnummer`,
-            `email`, 
-            `bod`) 
-            VALUES
-            ('$villas',
-            '$voorNaam',
-            '$achterNaam',
-            '$telefoonNummer',
-            '$email',
-            '$bod')";
+                (`villa`, 
+                `voornaam`,
+                `achternaam`, 
+                `telefoonnummer`,
+                `email`, 
+                `bod`) 
+                VALUES
+                ('$villaname',
+                '$voorNaam',
+                '$achterNaam',
+                '$telefoonNummer',
+                '$email',
+                '$bod')";
             if ($db_connection->query($insertsql) == TRUE) {
+                header("Location: index.php");
             } else {
                 echo "Error :" . $insertsql . "<br>" . $db_connection->error;
             }

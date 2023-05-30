@@ -100,6 +100,7 @@ img {
 .main-content {
   display: grid;
   grid-template-columns: repeat(2, auto);
+  place-items: center;
   margin-left: 40px;
 }
 

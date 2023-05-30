@@ -18,6 +18,14 @@ while ($details = $result->fetch_assoc()) {
     $Indeling = $details['Indeling'];
     $Locatie = $details['Locatie'];
 }
+
+$SQL2 = "SELECT achternaam, voornaam, datum, bod
+FROM bieden
+WHERE villa = '$name'
+ORDER BY bod DESC
+LIMIT 3";
+
+$result2 = $db_connection->query($SQL2);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +39,26 @@ while ($details = $result->fetch_assoc()) {
     <link rel="stylesheet" href="../CSS/headerfooter.css">
     <link rel="stylesheet" href="../CSS/colors.css" />
     <link rel="stylesheet" href="../CSS/view.css">
+    <style>
+        .table-bieden {
+            width: 25%;
+        }
+
+        .table-bieden th,
+        .table-bieden td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .table-bieden thead th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .table-bieden tbody td {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,22 +120,22 @@ while ($details = $result->fetch_assoc()) {
                             <th>Bod</th>
                             <th>Datum</th>
                         </thead>
-                        <tbody>
+                        <?php
+                        while ($details2 = $result2->fetch_assoc()) {
+                            $voornaam = $details2['voornaam'];
+                            $achternaam = $details2['achternaam'];
+                            $fullname = $voornaam . ' ' . $achternaam;
+                            $bod = $details2['bod'];
+                            $datum = $details2['datum'];
+                        ?>
                             <tr>
-                                <td>(Naam)</td>
-                                <td>(Bod)</td>
-                                <td>(Datum)</td>
+                                <td><?= $fullname ?></td>
+                                <td><?= $bod ?></td>
+                                <td><?= $datum ?></td>
                             </tr>
-                            <tr>
-                                <td>(Naam)</td>
-                                <td>(Bod)</td>
-                                <td>(Datum)</td>
-                            </tr>
-                            <tr>
-                                <td>(Naam)</td>
-                                <td>(Bod)</td>
-                                <td>(Datum)</td>
-                            </tr>
+                        <?php
+                        }
+                        ?>
                         </tbody>
                     </table>
                 </div>
