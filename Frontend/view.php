@@ -181,7 +181,7 @@ $result2 = $db_connection->query($SQL2);
                             <div class="form-group">
                                 <label class="form-label" for="bod">Bod:</label>
                                 <input class="form-input" type="number" id="bod" name="bod"
-                                    value="<?= isset($bod) ? $bod : '' ?>">
+                                    value="<?= isset($geplaatstBod) ? $geplaatstBod : '' ?>">
                             </div>
                             <input class="form-button" name="submit" type="submit" value="Plaats Bod">
                         </form>

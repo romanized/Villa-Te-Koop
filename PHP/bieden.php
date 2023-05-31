@@ -30,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (empty($_POST['bod'])) {
             $Error .= "U moet uw Bod nog invullen<br>";
         } else {
-            $bod = $_POST['bod'];
-            if (!is_numeric($bod)) {
+            $geplaatstBod = $_POST['bod'];
+            if (!is_numeric($geplaatstBod)) {
                 $Error .= "Bod moet een numerieke waarde zijn<br>";
-            } else  if ($bod < 1000000) {
+            } else if ($geplaatstBod < 1000000) {
                 $Error .= "Bod moet groter zijn dan 1000000<br>";
             }
         }
