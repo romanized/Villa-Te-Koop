@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 '$achterNaam',
                 '$telefoonNummer',
                 '$email',
-                '$bod')";
+                '$geplaatstBod')";
             if ($db_connection->query($insertsql) == TRUE) {
                 header("Location: index.php");
             } else {
