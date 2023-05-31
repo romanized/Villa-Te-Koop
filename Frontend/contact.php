@@ -1,3 +1,8 @@
+<?php 
+require("../PHP/require.php");
+require("../PHP/contact.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,9 +53,8 @@
             <h3>Vul de onderstaande informatie zo duidelijk mogelijk op</h3>
           </div>
           <div class="row body">
-            <form action="#">
+            <form method="post">
               <ul>
-                
                 <li>
                   <p class="left">
                     <label for="name">Uw naam <span class="req">*</span></label>
@@ -58,7 +62,7 @@
                   </p>
                   <p class="pull-right">
                     <label for="last_name">Adres</label>
-                    <input type="text" name="last_name" placeholder="Heer Bokelweg 255"/>      
+                    <input type="text" name="Adres" placeholder="Heer Bokelweg 255"/>      
                   </p>
                 </li>
                 <li>
@@ -68,28 +72,16 @@
                   </p>       
                 <p class="pull-right">
                     <label for="telefoonnummer">Telefoonnummer <span class="req">*</span></label>
-                    <input type="text" name="last_name" placeholder="06 12345679" required/>      
+                    <input type="text" name="telefoonnummer" placeholder="06 12345679" required/>      
                   </p>
                 <li><div class="divider"></div></li>
                 <li>
                   <label for="comments">Vraag / Opmerking:</label>
                   <textarea cols="46" rows="3" name="comments" required></textarea>
                 </li>
-                
                 <li>
-                    <button>
-                        <div class="svg-wrapper-1">
-                          <div class="svg-wrapper">
-                            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0 0h24v24H0z" fill="none"></path>
-                              <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" fill="currentColor"></path>
-                            </svg>
-                          </div>
-                        </div>
-                        <span>Send</span>
-                      </button>
+                  <input class="form-button" name="submit" type="submit" value="Verzend">
                 </li>
-                
               </ul>
             </form>  
           </div>
