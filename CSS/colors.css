@@ -5,7 +5,8 @@
   --background-white: #ffffff;
   --text-color-black: #333333;
   --text-color-white: white;
-  --text-color-gold: #ffd700;
+  --text-color-gold: #caaf13;
+  --error: rgb(121, 0, 0);
 }
 
 /*   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
