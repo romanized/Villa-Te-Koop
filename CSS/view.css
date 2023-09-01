@@ -62,7 +62,7 @@ img {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: var(--text-color-black);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -70,7 +70,7 @@ img {
 
 .active,
 .dot:hover {
-  background-color: #46dc5a;
+  background-color: var(--color1);
 }
 
 .fade {
@@ -148,6 +148,11 @@ span {
 
 /* Form Bieden Start */
 
+.error {
+  color: var(--error);
+  font-size: 16px;
+}
+
 .form-container {
   max-width: 400px;
   margin-top: 20px;
@@ -182,4 +187,85 @@ span {
 .form-button:hover {
   background-color: var(--color2);
   transition: all 0.6s ease;
+}
+
+.loaders {
+  color: rgb(124, 124, 124);
+  font-family: "Poppins",sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 40px;
+  padding: 10px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 8px;
+}
+
+.words {
+  overflow: hidden;
+}
+
+.word {
+  display: block;
+  height: 100%;
+  padding-left: 6px;
+  color: #956afa;
+  animation: spin_4991 4s infinite;
+  transition: 0.2s;
+  scale: 1;
+}
+
+.word:hover {
+  scale: 1.03;
+  color: var(--color2);
+  cursor: pointer;
+}
+
+@keyframes spin_4991 {
+  15% {
+    -webkit-transform: translateY(-105%);
+    transform: translateY(-105%);
+  }
+
+  25% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  35% {
+    -webkit-transform: translateY(-205%);
+    transform: translateY(-205%);
+  }
+
+  50% {
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+
+  60% {
+    -webkit-transform: translateY(-305%);
+    transform: translateY(-305%);
+  }
+
+  75% {
+    -webkit-transform: translateY(-300%);
+    transform: translateY(-300%);
+  }
+
+  85% {
+    -webkit-transform: translateY(-405%);
+    transform: translateY(-405%);
+  }
+
+  100% {
+    -webkit-transform: translateY(-400%);
+    transform: translateY(-400%);
+  }
+}
+
+.viewfooter {
+  font-size: 32px;
 }
