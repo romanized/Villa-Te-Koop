@@ -115,7 +115,7 @@ while ($details = $result->fetch_assoc()) {
                     <span><?= $Error ?></span>
                     <span>Doe een bod</span>
                     <div class="form-container">
-                        <form method="post" action="">
+                        <form method="post">
                             <input type="hidden" name="villaname" value="<?= $name ?>">
                             <div class="form-group">
                                 <label class="form-label" for="voornaam">Voornaam:</label>

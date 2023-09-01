@@ -1,4 +1,9 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+
 $Error = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -15,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $achterNaam = $_POST['achternaam'];
         }
 
-        if (empty($_POST['voornaam'])) {
+        if (empty($_POST['telefoonnummer'])) {
             $Error .= "U moet uw Achternaam nog invullen<br>";
         } else {
             $telefoonNummer = $_POST['telefoonnummer'];
